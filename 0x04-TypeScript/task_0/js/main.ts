@@ -47,3 +47,4 @@ interface Student {
  
  table.append(tbody);
  body.append(table);
+ 
