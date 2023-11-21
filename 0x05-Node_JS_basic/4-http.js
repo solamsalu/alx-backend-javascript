@@ -1,14 +1,12 @@
-const { createServer } = require('http');
+const http = require('http');
 
-const PORT = 1245;
-const HOST = '127.0.0.1';
-
-const app = createServer((_req, resp) => {
-  resp.statusCode = 200;
-  resp.setHeader('Content-Type', 'text/plain');
-  resp.end('Hello Holberton School!');
+const app = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello Holberton School!');
 });
 
-app.listen(PORT, HOST, () => {});
+app.listen(1245, '0.0.0.0', () => {
+  console.log('Listening on port 1245');
+});
 
 module.exports = app;
